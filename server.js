@@ -11,6 +11,13 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
+// CORS configuration
+app.use(cors({
+    origin: "https://test-f-8pky.onrender.com", // Replace with your frontend domain
+    credentials: true
+}));
+app.use(express.json());
+
 // MongoDB connection
 const URI = "mongodb+srv://gurnessh:gurnessh@cluster0.ymvpxqk.mongodb.net/Artlist";
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
